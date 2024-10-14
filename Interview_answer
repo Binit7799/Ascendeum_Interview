@@ -1,0 +1,25 @@
+Q1)
+string="binit"
+reversed_string=$(rev <<< "$string")
+echo "$reversed_string"
+
+
+Output:ss attached in output folder
+
+Q3)
+#!/bin/bash
+
+websites=("google.com" "github.com" "nonexistantwebsite.example")
+
+for i in "${websites[@]}"; do
+  ping -c 1 "$i"
+  if [ $? -eq 0 ]; then
+    echo "$i is reachable"
+  else
+    echo "$i is not reachable"
+  fi
+done
+
+Q4)
+#!/bin/bash
+ls -l | sort -n -r | cut -d " " -f 5
