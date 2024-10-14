@@ -1,10 +1,11 @@
 Q1)
-string="binit"
-reversed_string=$(rev <<< "$string")
-echo "$reversed_string"
+read -p "Enter a string: " input
+
+reversed=$(echo "$input" | rev)
+
+echo "Reversed string: $reversed"
 
 
-Output:ss attached in output folder
 
 Q3)
 #!/bin/bash
@@ -22,4 +23,8 @@ done
 
 Q4)
 #!/bin/bash
-ls -l | sort -n -r | cut -d " " -f 5
+#!/bin/bash
+
+
+echo "Files in descending order of size:"
+ls -lSh | awk 'NR>1 {print $9, $5}'
